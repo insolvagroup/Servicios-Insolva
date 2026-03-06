@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSOLVA — Conectividad y Seguridad para tu Hogar</title>
-    <meta name="description" content="Planificá la conectividad y seguridad de tu hogar desde la obra. Internet, redes, cámaras, alarmas y monitoreo de obradores en Ushuaia, Tierra del Fuego.">
+    <meta name="description"
+        content="Planificá la conectividad y seguridad de tu hogar desde la obra. Internet, redes, cámaras, alarmas y monitoreo de obradores en Ushuaia, Tierra del Fuego.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700&display=swap"
+        rel="stylesheet">
     <style>
         /* ═══════════════════════════════════════
            DESIGN TOKENS — Mobile-First
@@ -45,9 +48,15 @@
             --radius-sm: 10px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -65,22 +74,52 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .fade-up.show { opacity: 1; transform: translateY(0); }
-        .fade-up.d1 { transition-delay: 0.1s; }
-        .fade-up.d2 { transition-delay: 0.2s; }
-        .fade-up.d3 { transition-delay: 0.3s; }
-        .fade-up.d4 { transition-delay: 0.4s; }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-up.d1 {
+            transition-delay: 0.1s;
+        }
+
+        .fade-up.d2 {
+            transition-delay: 0.2s;
+        }
+
+        .fade-up.d3 {
+            transition-delay: 0.3s;
+        }
+
+        .fade-up.d4 {
+            transition-delay: 0.4s;
+        }
 
         @keyframes pulse-glow {
-            0%, 100% { opacity: 0.6; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
         }
 
         /* ═══════════════════════════════════════
@@ -97,10 +136,22 @@
             margin: 0 auto;
         }
 
-        .section-dark { background: var(--bg-dark); }
-        .section-deep { background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%); }
-        .section-light { background: var(--bg-light); color: var(--text-on-light); }
-        .section-problem { background: linear-gradient(135deg, #0C0F1A 0%, #1E0A10 100%); }
+        .section-dark {
+            background: var(--bg-dark);
+        }
+
+        .section-deep {
+            background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%);
+        }
+
+        .section-light {
+            background: var(--bg-light);
+            color: var(--text-on-light);
+        }
+
+        .section-problem {
+            background: linear-gradient(135deg, #0C0F1A 0%, #1E0A10 100%);
+        }
 
         /* ═══════════════════════════════════════
            TYPOGRAPHY — High Contrast
@@ -126,21 +177,36 @@
             display: block;
             line-height: 1.2;
         }
+
         .section-title-teal {
             color: var(--teal);
             text-shadow: 0 0 30px rgba(0, 230, 184, 0.25);
         }
+
         .section-title-amber {
             color: var(--amber);
             text-shadow: 0 0 30px rgba(252, 211, 77, 0.2);
         }
+
         .section-title-dark {
             color: var(--teal-dark);
         }
-        .tag-teal { color: var(--teal); }
-        .tag-amber { color: var(--amber); }
-        .tag-coral { color: var(--coral); }
-        .tag-dark { color: var(--teal-dark); }
+
+        .tag-teal {
+            color: var(--teal);
+        }
+
+        .tag-amber {
+            color: var(--amber);
+        }
+
+        .tag-coral {
+            color: var(--coral);
+        }
+
+        .tag-dark {
+            color: var(--teal-dark);
+        }
 
         .heading {
             font-family: 'Sora', sans-serif;
@@ -149,18 +215,30 @@
             margin-bottom: var(--space-md);
             letter-spacing: -0.02em;
         }
-        .heading-xl { font-size: clamp(30px, 8vw, 48px); }
-        .heading-lg { font-size: clamp(24px, 6vw, 36px); }
+
+        .heading-xl {
+            font-size: clamp(30px, 8vw, 48px);
+        }
+
+        .heading-lg {
+            font-size: clamp(24px, 6vw, 36px);
+        }
 
         .body-text {
             font-size: 16px;
             line-height: 1.7;
             margin-bottom: var(--space-lg);
         }
+
         /* On dark bg: secondary text for readability */
-        .body-on-dark { color: var(--text-on-dark-secondary); }
+        .body-on-dark {
+            color: var(--text-on-dark-secondary);
+        }
+
         /* On light bg: secondary text */
-        .body-on-light { color: var(--text-on-light-secondary); }
+        .body-on-light {
+            color: var(--text-on-light-secondary);
+        }
 
         .accent-line {
             width: 48px;
@@ -187,21 +265,30 @@
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .card:hover { transform: translateY(-2px); }
+
+        .card:hover {
+            transform: translateY(-2px);
+        }
 
         .card-dark {
             background: var(--bg-card-dark);
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(10px);
         }
-        .card-dark:hover { box-shadow: 0 8px 32px rgba(0, 230, 184, 0.08); }
+
+        .card-dark:hover {
+            box-shadow: 0 8px 32px rgba(0, 230, 184, 0.08);
+        }
 
         .card-light {
             background: var(--bg-card-light);
             border: 1px solid rgba(0, 0, 0, 0.06);
             box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
         }
-        .card-light:hover { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08); }
+
+        .card-light:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
 
         .card-glass {
             background: rgba(0, 230, 184, 0.06);
@@ -216,7 +303,9 @@
 
         .card-accent {
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 3px;
             border-radius: var(--radius) var(--radius) 0 0;
         }
@@ -244,7 +333,9 @@
         }
 
         .check-icon {
-            width: 22px; height: 22px; min-width: 22px;
+            width: 22px;
+            height: 22px;
+            min-width: 22px;
             border-radius: 50%;
             background: var(--teal);
             display: flex;
@@ -253,7 +344,11 @@
             margin-top: 2px;
             flex-shrink: 0;
         }
-        .check-icon svg { width: 12px; height: 12px; }
+
+        .check-icon svg {
+            width: 12px;
+            height: 12px;
+        }
 
         .check-text {
             font-size: 15px;
@@ -266,6 +361,7 @@
             border-left: 3px solid var(--teal);
             margin-bottom: 20px;
         }
+
         .reason-title {
             font-family: 'Sora', sans-serif;
             font-weight: 700;
@@ -273,6 +369,7 @@
             margin-bottom: 4px;
             color: var(--text-on-dark);
         }
+
         .reason-desc {
             font-size: 14px;
             color: var(--text-on-dark-secondary);
@@ -292,9 +389,21 @@
             border-radius: 6px;
             margin-bottom: var(--space-sm);
         }
-        .tier-pro { background: rgba(34, 211, 238, 0.15); color: var(--cyan); }
-        .tier-mid { background: rgba(0, 230, 184, 0.15); color: var(--teal); }
-        .tier-temp { background: rgba(252, 211, 77, 0.15); color: var(--amber); }
+
+        .tier-pro {
+            background: rgba(34, 211, 238, 0.15);
+            color: var(--cyan);
+        }
+
+        .tier-mid {
+            background: rgba(0, 230, 184, 0.15);
+            color: var(--teal);
+        }
+
+        .tier-temp {
+            background: rgba(252, 211, 77, 0.15);
+            color: var(--amber);
+        }
 
         .brand-name {
             font-family: 'Sora', sans-serif;
@@ -312,11 +421,13 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .svc-card .status {
             font-size: 24px;
             flex-shrink: 0;
             margin-left: var(--space-sm);
         }
+
         .svc-label {
             font-family: 'Sora', sans-serif;
             font-size: 11px;
@@ -325,6 +436,7 @@
             color: var(--text-on-light-muted);
             margin-bottom: 6px;
         }
+
         .svc-desc {
             font-size: 14px;
             color: var(--text-on-light-secondary);
@@ -355,7 +467,10 @@
             font-size: 15px;
             color: var(--text-on-dark-secondary);
         }
-        .footer-contact svg { flex-shrink: 0; }
+
+        .footer-contact svg {
+            flex-shrink: 0;
+        }
 
         /* ═══════════════════════════════════════
            GLOW EFFECTS
@@ -386,6 +501,7 @@
             align-items: center;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
+
         .nav a {
             color: var(--text-on-dark-secondary);
             text-decoration: none;
@@ -397,26 +513,52 @@
             transition: color 0.3s ease;
             white-space: nowrap;
         }
-        .nav a:hover, .nav a:focus { color: var(--teal); }
+
+        .nav a:hover,
+        .nav a:focus {
+            color: var(--teal);
+        }
 
         /* ═══════════════════════════════════════
            RESPONSIVE — Tablet+
            ═══════════════════════════════════════ */
         @media (min-width: 640px) {
-            .section { padding: var(--space-3xl) var(--space-xl); }
-            .container { max-width: 720px; }
-            .grid-2 { grid-template-columns: 1fr 1fr; }
+            .section {
+                padding: var(--space-3xl) var(--space-xl);
+            }
+
+            .container {
+                max-width: 720px;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (min-width: 1024px) {
-            .container { max-width: 900px; }
-            .section { padding: 80px var(--space-xl); }
+            .container {
+                max-width: 900px;
+            }
+
+            .section {
+                padding: 80px var(--space-xl);
+            }
         }
 
         @media (max-width: 380px) {
-            .section { padding: 40px var(--space-md); }
-            .nav { gap: var(--space-md); padding: 8px 16px; }
-            .nav a { font-size: 10px; }
+            .section {
+                padding: 40px var(--space-md);
+            }
+
+            .nav {
+                gap: var(--space-md);
+                padding: 8px 16px;
+            }
+
+            .nav a {
+                font-size: 10px;
+            }
         }
     </style>
 </head>
@@ -436,30 +578,39 @@
      ═══════════════════════════════════════════════ -->
     <section class="section section-deep" style="padding-top:72px; padding-bottom:72px;">
         <div class="container" style="text-align:center;">
-            <div class="glow" style="top:-60px; right:-60px; width:280px; height:280px; background:rgba(0,230,184,0.08);"></div>
-            <div class="glow" style="bottom:-40px; left:-80px; width:200px; height:200px; background:rgba(34,211,238,0.06);"></div>
-            <div class="glow" style="top:50%; left:50%; transform:translate(-50%,-50%); width:300px; height:300px; background:rgba(0,230,184,0.04);"></div>
+            <div class="glow"
+                style="top:-60px; right:-60px; width:280px; height:280px; background:rgba(0,230,184,0.08);"></div>
+            <div class="glow"
+                style="bottom:-40px; left:-80px; width:200px; height:200px; background:rgba(34,211,238,0.06);"></div>
+            <div class="glow"
+                style="top:50%; left:50%; transform:translate(-50%,-50%); width:300px; height:300px; background:rgba(0,230,184,0.04);">
+            </div>
 
             <div class="fade-up" style="margin-bottom:24px;">
-                <span style="font-family:'Sora',sans-serif; font-size:clamp(36px, 10vw, 56px); font-weight:800; letter-spacing:8px; color:var(--teal); text-shadow: 0 0 40px rgba(0,230,184,0.3); display:block;">INSOLVA</span>
+                <span
+                    style="font-family:'Sora',sans-serif; font-size:clamp(36px, 10vw, 56px); font-weight:800; letter-spacing:8px; color:var(--teal); text-shadow: 0 0 40px rgba(0,230,184,0.3); display:block;">INSOLVA</span>
             </div>
 
             <div class="fade-up d1">
                 <h1 class="heading heading-xl" style="margin-bottom:6px;">Conectividad</h1>
-                <h1 class="heading heading-xl" style="color:var(--teal); margin-bottom:6px; text-shadow: 0 0 40px rgba(0,230,184,0.2);">y Seguridad</h1>
+                <h1 class="heading heading-xl"
+                    style="color:var(--teal); margin-bottom:6px; text-shadow: 0 0 40px rgba(0,230,184,0.2);">y Seguridad
+                </h1>
                 <h1 class="heading heading-xl">para tu Hogar</h1>
             </div>
 
             <div class="fade-up d3">
-                <p style="font-size:17px; color:var(--text-on-dark-secondary); margin-top:24px; line-height:1.6; max-width:360px; margin-left:auto; margin-right:auto;">
+                <p
+                    style="font-size:17px; color:var(--text-on-dark-secondary); margin-top:24px; line-height:1.6; max-width:360px; margin-left:auto; margin-right:auto;">
                     Planificá hoy lo que vas a necesitar mañana.
                 </p>
-                <div style="display:flex; gap:20px; margin-top:28px; font-size:11px; color:var(--text-on-dark-secondary); letter-spacing:3px; font-weight:600; font-family:'Sora',sans-serif; flex-wrap:wrap; justify-content:center;">
+                <div
+                    style="display:flex; gap:20px; margin-top:28px; font-size:11px; color:var(--text-on-dark-secondary); letter-spacing:3px; font-weight:600; font-family:'Sora',sans-serif; flex-wrap:wrap; justify-content:center;">
                     <span>Ingeniería</span>
                     <span style="color:var(--teal);">•</span>
                     <span>Tecnología</span>
                     <span style="color:var(--teal);">•</span>
-                    <span>IA</span>
+                    <span>Seguridad</span>
                 </div>
             </div>
         </div>
@@ -479,7 +630,8 @@
                 <h2 class="heading heading-lg" style="color:#fff;">
                     ¿Quién planifica tu conectividad y seguridad?
                 </h2>
-                <div style="width:40px; height:3px; background:var(--teal); border-radius:2px; margin:20px auto 0;"></div>
+                <div style="width:40px; height:3px; background:var(--teal); border-radius:2px; margin:20px auto 0;">
+                </div>
             </div>
         </div>
     </section>
@@ -535,7 +687,8 @@
             </div>
 
             <div class="fade-up d4">
-                <p style="font-size:15px; font-style:italic; font-weight:600; color:var(--teal-dark); text-align:center; margin-top:var(--space-md);">
+                <p
+                    style="font-size:15px; font-style:italic; font-weight:600; color:var(--teal-dark); text-align:center; margin-top:var(--space-md);">
                     Lo que no planificás en obra, lo pagás después.
                 </p>
             </div>
@@ -559,28 +712,47 @@
 
             <div class="fade-up d2">
                 <div class="check-item">
-                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg></div>
                     <span class="check-text">Ruteo de cables de red y CCTV dentro de las paredes</span>
                 </div>
                 <div class="check-item">
-                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg></div>
                     <span class="check-text">Rack central de redes — dónde ubicarlo</span>
                 </div>
                 <div class="check-item">
-                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg></div>
                     <span class="check-text">Puntos de acceso Wi-Fi para cobertura total</span>
                 </div>
                 <div class="check-item">
-                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg></div>
                     <span class="check-text">Simulación de cámaras desde el plano</span>
                 </div>
                 <div class="check-item">
-                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg></div>
                     <span class="check-text">Infraestructura lista para alarmas</span>
                 </div>
                 <div class="check-item">
-                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-                    <span class="check-text">Enlace 4G de contingencia — si se cae tu internet, toma el control automáticamente</span>
+                    <div class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg></div>
+                    <span class="check-text">Enlace de contingencia — tener una segunda alternativa de conexión siempre
+                        activa.</span>
                 </div>
             </div>
 
@@ -588,7 +760,8 @@
             <div class="fade-up d3">
                 <div class="card card-glass" style="margin-top:8px;">
                     <div class="card-accent" style="background:var(--teal);"></div>
-                    <div style="font-family:'Sora',sans-serif; font-size:13px; font-weight:700; color:var(--teal); letter-spacing:1px; margin-bottom:16px;">
+                    <div
+                        style="font-family:'Sora',sans-serif; font-size:13px; font-weight:700; color:var(--teal); letter-spacing:1px; margin-bottom:16px;">
                         ¿POR QUÉ EN OBRA?</div>
 
                     <div class="reason-item">
@@ -620,7 +793,8 @@
                     ¿Ya estrenaste? <span style="color:var(--teal-dark);">También tenemos solución.</span>
                 </h2>
                 <p class="body-text body-on-light">
-                    La mayoría de nuestras instalaciones se hacen en casas ya construidas. No es una limitación — es nuestro escenario más habitual.
+                    La mayoría de nuestras instalaciones se hacen en casas ya construidas. No es una limitación — es
+                    nuestro escenario más habitual.
                 </p>
             </div>
 
@@ -628,7 +802,9 @@
                 <div class="card card-light">
                     <div class="card-accent" style="background:var(--teal-dark);"></div>
                     <div class="card-title" style="color:var(--text-on-light);">Foco en prolijidad</div>
-                    <div class="card-desc" style="color:var(--text-on-light-secondary);">Planificamos cada metro de cableado y cada perforación para que la instalación sea limpia y respete la estética de tu casa.</div>
+                    <div class="card-desc" style="color:var(--text-on-light-secondary);">Planificamos cada metro de
+                        cableado y cada perforación para que la instalación sea limpia y respete la estética de tu casa.
+                    </div>
                 </div>
             </div>
 
@@ -636,7 +812,8 @@
                 <div class="card card-light">
                     <div class="card-accent" style="background:var(--teal-dark);"></div>
                     <div class="card-title" style="color:var(--text-on-light);">Alternativas inalámbricas</div>
-                    <div class="card-desc" style="color:var(--text-on-light-secondary);">Cuando el cableado no es viable, desplegamos sistemas mesh profesionales y enlaces punto a punto.</div>
+                    <div class="card-desc" style="color:var(--text-on-light-secondary);">Cuando el cableado no es
+                        viable, desplegamos sistemas mesh profesionales y enlaces punto a punto.</div>
                 </div>
             </div>
         </div>
@@ -656,7 +833,8 @@
                     Un solo router <span style="color:var(--coral);">no alcanza.</span>
                 </h2>
                 <p class="body-text body-on-dark">
-                    Casas grandes, varios niveles y paredes de material macizo son enemigos de la señal Wi-Fi. No es culpa de tu proveedor — es falta de planificación.
+                    Casas grandes, varios niveles y paredes de material macizo son enemigos de la señal Wi-Fi. No es
+                    culpa de tu proveedor — es falta de planificación.
                 </p>
             </div>
 
@@ -669,13 +847,15 @@
             <div class="fade-up d2">
                 <div class="card card-problem">
                     <div class="card-title" style="color:#FFF1F2;">Varios niveles</div>
-                    <div class="card-desc" style="color:#FECDD3;">Losas y entrepisos de hormigón bloquean la señal entre pisos.</div>
+                    <div class="card-desc" style="color:#FECDD3;">Losas y entrepisos de hormigón bloquean la señal entre
+                        pisos.</div>
                 </div>
             </div>
             <div class="fade-up d3">
                 <div class="card card-problem">
                     <div class="card-title" style="color:#FFF1F2;">Material macizo</div>
-                    <div class="card-desc" style="color:#FECDD3;">Ladrillo, piedra y concreto atenúan drásticamente el Wi-Fi.</div>
+                    <div class="card-desc" style="color:#FECDD3;">Ladrillo, piedra y concreto atenúan drásticamente el
+                        Wi-Fi.</div>
                 </div>
             </div>
         </div>
@@ -693,7 +873,8 @@
                     Trabajar desde casa <span style="color:var(--teal-dark);">requiere infraestructura real.</span>
                 </h2>
                 <p class="body-text body-on-light">
-                    Un buen plan de internet no alcanza. Hay que planificar cómo distribuir ese servicio correctamente a cada sector de la casa.
+                    Un buen plan de internet no alcanza. Hay que planificar cómo distribuir ese servicio correctamente a
+                    cada sector de la casa.
                 </p>
             </div>
 
@@ -701,21 +882,25 @@
                 <div class="card card-light">
                     <div class="card-accent" style="background:var(--teal-dark);"></div>
                     <div class="card-title" style="color:var(--text-on-light);">Distribución inteligente</div>
-                    <div class="card-desc" style="color:var(--text-on-light-secondary);">Nodos y access points estratégicos para cobertura total sin zonas muertas.</div>
+                    <div class="card-desc" style="color:var(--text-on-light-secondary);">Nodos y access points
+                        estratégicos para cobertura total sin zonas muertas.</div>
                 </div>
             </div>
             <div class="fade-up d2">
                 <div class="card card-light">
                     <div class="card-accent" style="background:var(--teal-dark);"></div>
                     <div class="card-title" style="color:var(--text-on-light);">Priorización de tráfico</div>
-                    <div class="card-desc" style="color:var(--text-on-light-secondary);">QoS configurado para que videollamadas y VPN tengan prioridad sobre streaming.</div>
+                    <div class="card-desc" style="color:var(--text-on-light-secondary);">QoS configurado para que
+                        videollamadas y VPN tengan prioridad sobre streaming.</div>
                 </div>
             </div>
             <div class="fade-up d3">
                 <div class="card card-light">
                     <div class="card-accent" style="background:var(--amber-dark);"></div>
                     <div class="card-title" style="color:var(--text-on-light);">Plan de contingencia</div>
-                    <div class="card-desc" style="color:var(--text-on-light-secondary);">Si se cae tu proveedor principal, un enlace 4G toma el control automáticamente — segunda alternativa de conexión siempre activa.</div>
+                    <div class="card-desc" style="color:var(--text-on-light-secondary);">Si se cae tu proveedor
+                        principal, un enlace 4G toma el control automáticamente — segunda alternativa de conexión
+                        siempre activa.</div>
                 </div>
             </div>
         </div>
@@ -735,7 +920,8 @@
                     Cámaras diseñadas <span style="color:var(--teal);">para tu escenario.</span>
                 </h2>
                 <p class="body-text body-on-dark">
-                    No vendemos paquetes genéricos. Simulamos desde el plano de tu casa el tipo, cantidad y ubicación de cámaras según tu perímetro real.
+                    No vendemos paquetes genéricos. Simulamos desde el plano de tu casa el tipo, cantidad y ubicación de
+                    cámaras según tu perímetro real.
                 </p>
             </div>
 
@@ -744,28 +930,32 @@
                     <div class="card card-dark" style="height:100%;">
                         <div class="card-accent" style="background:var(--teal);"></div>
                         <div class="card-title" style="color:var(--text-on-dark);">Simulación perimetral</div>
-                        <div class="card-desc" style="color:var(--text-on-dark-secondary);">Cobertura visual óptima desde el plano.</div>
+                        <div class="card-desc" style="color:var(--text-on-dark-secondary);">Cobertura visual óptima
+                            desde el plano.</div>
                     </div>
                 </div>
                 <div class="fade-up d2">
                     <div class="card card-dark" style="height:100%;">
                         <div class="card-accent" style="background:var(--teal);"></div>
                         <div class="card-title" style="color:var(--text-on-dark);">Tecnología adecuada</div>
-                        <div class="card-desc" style="color:var(--text-on-dark-secondary);">Domo, bullet, PTZ o panorámica.</div>
+                        <div class="card-desc" style="color:var(--text-on-dark-secondary);">Domo, bullet, PTZ o
+                            panorámica.</div>
                     </div>
                 </div>
                 <div class="fade-up d3">
                     <div class="card card-dark" style="height:100%;">
                         <div class="card-accent" style="background:var(--teal);"></div>
                         <div class="card-title" style="color:var(--text-on-dark);">Visión nocturna</div>
-                        <div class="card-desc" style="color:var(--text-on-dark-secondary);">IR y ColorVu para baja iluminación.</div>
+                        <div class="card-desc" style="color:var(--text-on-dark-secondary);">IR y ColorVu para baja
+                            iluminación.</div>
                     </div>
                 </div>
                 <div class="fade-up d4">
                     <div class="card card-dark" style="height:100%;">
                         <div class="card-accent" style="background:var(--teal);"></div>
                         <div class="card-title" style="color:var(--text-on-dark);">Acceso remoto</div>
-                        <div class="card-desc" style="color:var(--text-on-dark-secondary);">Alertas personalizadas y acceso a grabaciones desde tu celular, 24/7.</div>
+                        <div class="card-desc" style="color:var(--text-on-dark-secondary);">Alertas personalizadas y
+                            acceso a grabaciones desde tu celular, 24/7.</div>
                     </div>
                 </div>
             </div>
@@ -784,29 +974,53 @@
                     Sensores inalámbricos <span style="color:var(--teal-dark);">que se integran con tus cámaras.</span>
                 </h2>
                 <p class="body-text body-on-light">
-                    Automatizá funciones de tu casa: luces que se encienden al detectar movimiento, persianas que se programan por horario y electrodomésticos que controlás desde el celular.
+                    Automatizá funciones de tu casa: luces que se encienden al detectar movimiento, persianas que se
+                    programan por horario y electrodomésticos que controlás desde el celular.
                 </p>
             </div>
 
             <div class="fade-up d1">
                 <div class="card card-light" style="border-left:3px solid var(--teal-dark);">
-                    <div style="font-family:'Sora',sans-serif; font-size:13px; font-weight:700; color:var(--teal-dark); letter-spacing:1px; margin-bottom:12px;">
+                    <div
+                        style="font-family:'Sora',sans-serif; font-size:13px; font-weight:700; color:var(--teal-dark); letter-spacing:1px; margin-bottom:12px;">
                         SIN OBRA ADICIONAL</div>
                     <div class="check-item">
-                        <div class="check-icon" style="width:18px;height:18px;min-width:18px;"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:10px;height:10px;"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <span class="check-text" style="color:var(--text-on-light-secondary); font-size:14px;">Sensores 100% inalámbricos</span>
+                        <div class="check-icon" style="width:18px;height:18px;min-width:18px;"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" style="width:10px;height:10px;">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg></div>
+                        <span class="check-text" style="color:var(--text-on-light-secondary); font-size:14px;">Sensores
+                            100% inalámbricos</span>
                     </div>
                     <div class="check-item">
-                        <div class="check-icon" style="width:18px;height:18px;min-width:18px;"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:10px;height:10px;"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <span class="check-text" style="color:var(--text-on-light-secondary); font-size:14px;">Frecuencia separada del Wi-Fi</span>
+                        <div class="check-icon" style="width:18px;height:18px;min-width:18px;"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" style="width:10px;height:10px;">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg></div>
+                        <span class="check-text"
+                            style="color:var(--text-on-light-secondary); font-size:14px;">Frecuencia separada del
+                            Wi-Fi</span>
                     </div>
                     <div class="check-item">
-                        <div class="check-icon" style="width:18px;height:18px;min-width:18px;"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:10px;height:10px;"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <span class="check-text" style="color:var(--text-on-light-secondary); font-size:14px;">Solo conexión al rack central</span>
+                        <div class="check-icon" style="width:18px;height:18px;min-width:18px;"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" style="width:10px;height:10px;">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg></div>
+                        <span class="check-text" style="color:var(--text-on-light-secondary); font-size:14px;">Solo
+                            conexión al rack central</span>
                     </div>
                     <div class="check-item">
-                        <div class="check-icon" style="width:18px;height:18px;min-width:18px;"><svg viewBox="0 0 24 24" fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="width:10px;height:10px;"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <span class="check-text" style="color:var(--text-on-light-secondary); font-size:14px;">Instalación rápida y limpia</span>
+                        <div class="check-icon" style="width:18px;height:18px;min-width:18px;"><svg viewBox="0 0 24 24"
+                                fill="none" stroke="#060A12" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round" style="width:10px;height:10px;">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg></div>
+                        <span class="check-text"
+                            style="color:var(--text-on-light-secondary); font-size:14px;">Instalación rápida y
+                            limpia</span>
                     </div>
                 </div>
             </div>
@@ -814,12 +1028,15 @@
             <div class="fade-up d2">
                 <div class="card" style="background:#0B1121; border:1px solid rgba(0,230,184,0.15);">
                     <div class="card-accent" style="background:var(--teal);"></div>
-                    <div style="font-family:'Sora',sans-serif; font-size:13px; font-weight:700; color:var(--teal); letter-spacing:1px; margin-bottom:12px;">
+                    <div
+                        style="font-family:'Sora',sans-serif; font-size:13px; font-weight:700; color:var(--teal); letter-spacing:1px; margin-bottom:12px;">
                         INTEGRACIÓN TOTAL</div>
                     <p style="font-size:15px; color:var(--text-on-dark-secondary); line-height:1.65;">
-                        Tus cámaras y tu alarma conviven y se comunican. Cuando un sensor detecta movimiento, las cámaras se activan automáticamente.
+                        Tus cámaras y tu alarma conviven y se comunican. Cuando un sensor detecta movimiento, las
+                        cámaras se activan automáticamente.
                     </p>
-                    <p style="font-size:15px; color:var(--text-on-dark); line-height:1.65; margin-top:12px; font-weight:600;">
+                    <p
+                        style="font-size:15px; color:var(--text-on-dark); line-height:1.65; margin-top:12px; font-weight:600;">
                         Recibís alerta con video en tu celular al instante.
                     </p>
                 </div>
@@ -849,21 +1066,24 @@
                 <div class="card card-dark">
                     <div class="card-accent" style="background:var(--amber);"></div>
                     <div class="card-title" style="color:var(--text-on-dark);">Conectividad 4G / Satelital</div>
-                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Funciona desde el día uno con chip de datos o Starlink.</div>
+                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Funciona desde el día uno con
+                        chip de datos o Starlink.</div>
                 </div>
             </div>
             <div class="fade-up d2">
                 <div class="card card-dark">
                     <div class="card-accent" style="background:var(--amber);"></div>
                     <div class="card-title" style="color:var(--text-on-dark);">Instalación flexible</div>
-                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Sistema modular que se monta y desmonta fácilmente. Al terminar la obra, los equipos se retiran sin dejar rastro.</div>
+                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Sistema modular que se retira al
+                        finalizar la obra.</div>
                 </div>
             </div>
             <div class="fade-up d3">
                 <div class="card card-dark">
                     <div class="card-accent" style="background:var(--amber);"></div>
                     <div class="card-title" style="color:var(--text-on-dark);">Acceso remoto 24/7</div>
-                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Mirá tu obra desde el celular. Alertas personalizadas y acceso a grabaciones incluidas.</div>
+                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Mirá tu obra desde el celular.
+                        Alertas personalizadas y acceso a grabaciones.</div>
                 </div>
             </div>
         </div>
@@ -875,7 +1095,7 @@
     <section class="section section-deep">
         <div class="container">
             <div class="fade-up">
-                <div class="section-title section-title-teal">TECNOLOGÍA QUE COMBINAMOS</div>
+                <div class="section-title section-title-teal">TECNOLOGÍA QUE UTILIZAMOS</div>
                 <div class="accent-line"></div>
                 <h2 class="heading heading-lg">
                     Elegimos la combinación correcta <span style="color:var(--teal);">según tu necesidad.</span>
@@ -887,7 +1107,8 @@
                     <div class="card-accent" style="background:var(--cyan);"></div>
                     <span class="tier-badge tier-pro">NIVEL PROFESIONAL</span>
                     <div class="brand-name">HIKVISION · DAHUA</div>
-                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Máxima calidad de imagen, analítica IA, grabación 24/7. Para residencias que exigen lo mejor.</div>
+                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Máxima calidad de imagen,
+                        analítica IA, grabación 24/7. Para residencias que exigen lo mejor.</div>
                 </div>
             </div>
             <div class="fade-up d2">
@@ -895,7 +1116,8 @@
                     <div class="card-accent" style="background:var(--teal);"></div>
                     <span class="tier-badge tier-mid">CALIDAD ACCESIBLE</span>
                     <div class="brand-name">HiLook</div>
-                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Tecnología confiable a precio accesible. Ideal para complementar o para presupuestos ajustados.</div>
+                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Tecnología confiable a precio
+                        accesible. Ideal para complementar o para presupuestos ajustados.</div>
                 </div>
             </div>
             <div class="fade-up d3">
@@ -903,7 +1125,8 @@
                     <div class="card-accent" style="background:var(--amber);"></div>
                     <span class="tier-badge tier-temp">OBRADORES</span>
                     <div class="brand-name">EZVIZ · TP-LINK</div>
-                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Equipos robustos para instalaciones temporales con 4G. Fáciles de instalar y reubicar.</div>
+                    <div class="card-desc" style="color:var(--text-on-dark-secondary);">Equipos robustos para
+                        instalaciones temporales con 4G. Fáciles de instalar y reubicar.</div>
                 </div>
             </div>
         </div>
@@ -921,42 +1144,49 @@
                 <p style="font-size:17px; color:var(--text-on-dark); margin-bottom:24px; line-height:1.6;">
                     Planificá hoy. Ahorrá mañana.<br>Viví tranquilo.
                 </p>
-                <div style="width:40px; height:3px; background:var(--teal); border-radius:2px; margin:0 auto 28px;"></div>
+                <div style="width:40px; height:3px; background:var(--teal); border-radius:2px; margin:0 auto 28px;">
+                </div>
             </div>
 
             <div class="fade-up d2">
                 <div class="cta-block" style="text-align:left;">
-                    <div style="font-family:'Sora',sans-serif; font-size:13px; font-weight:700; color:var(--teal); letter-spacing:1px; margin-bottom:16px;">
+                    <div
+                        style="font-family:'Sora',sans-serif; font-size:13px; font-weight:700; color:var(--teal); letter-spacing:1px; margin-bottom:16px;">
                         CONTACTO</div>
 
                     <div class="footer-contact">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
                         <span>2901-641452</span>
                     </div>
 
                     <div class="footer-contact">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
                         </svg>
                         <span>contacto@insolvagroup.com</span>
                     </div>
 
                     <div class="footer-contact">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="20" rx="5"/>
-                            <circle cx="12" cy="12" r="5"/>
-                            <circle cx="17.5" cy="6.5" r="1.5" fill="var(--teal)"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" />
+                            <circle cx="12" cy="12" r="5" />
+                            <circle cx="17.5" cy="6.5" r="1.5" fill="var(--teal)" />
                         </svg>
                         <span>insolva_group</span>
                     </div>
 
                     <div class="footer-contact">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)"
+                            stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
                         </svg>
                         <span>Ushuaia, Tierra del Fuego, Argentina</span>
                     </div>
@@ -964,8 +1194,9 @@
             </div>
 
             <div class="fade-up d3">
-                <p style="font-family:'Sora',sans-serif; font-size:11px; color:var(--text-on-dark-muted); margin-top:24px; letter-spacing:2px;">
-                    INGENIERÍA · TECNOLOGÍA · IA
+                <p
+                    style="font-family:'Sora',sans-serif; font-size:11px; color:var(--text-on-dark-muted); margin-top:24px; letter-spacing:2px;">
+                    INGENIERÍA · TECNOLOGÍA · SEGURIDAD
                 </p>
             </div>
         </div>
@@ -988,8 +1219,8 @@
             els.forEach(function (el) { observer.observe(el); });
 
             // Smooth scroll for nav links
-            document.querySelectorAll('.nav a').forEach(function(a) {
-                a.addEventListener('click', function(e) {
+            document.querySelectorAll('.nav a').forEach(function (a) {
+                a.addEventListener('click', function (e) {
                     e.preventDefault();
                     var target = document.querySelector(this.getAttribute('href'));
                     if (target) {
