@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background rounded square -->
+  <rect width="32" height="32" rx="7" fill="#0B1121"/>
+
+  <!-- Mounting bracket (top center) -->
+  <rect x="13.5" y="2.5" width="5" height="7" rx="2.5" fill="#00E6B8"/>
+
+  <!-- Camera body -->
+  <rect x="3" y="10" width="17" height="11" rx="3" fill="#00E6B8"/>
+
+  <!-- Lens housing -->
+  <circle cx="25" cy="15.5" r="5.5" fill="#0D9488"/>
+  <circle cx="25" cy="15.5" r="3.5" fill="#060A12"/>
+  <circle cx="25" cy="15.5" r="1.8" fill="#00E6B8" opacity="0.75"/>
+  <!-- Lens reflection dot -->
+  <circle cx="23.8" cy="14.3" r="0.7" fill="white" opacity="0.4"/>
+
+  <!-- IR indicator dots on body -->
+  <circle cx="8"  cy="15.5" r="1.1" fill="#060A12" opacity="0.45"/>
+  <circle cx="12" cy="15.5" r="1.1" fill="#060A12" opacity="0.45"/>
+</svg>
