@@ -512,17 +512,26 @@ function saveHTMLWithLogo() {
   URL.revokeObjectURL(url);
 }
 
-// Intento cargar automático desde archivo local al inicio
+// Carga desde GitHub raw (siempre actualizado, no necesita redeploy)
+// El Apps Script sube el JSON a GitHub automaticamente
 async function cargarJSONLocal() {
+  const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/insolvagroup/Servicios-Insolva/main/cotizaciones/cotizaciones_data.json';
   try {
-    const res = await fetch('cotizaciones_data.json');
+    const res = await fetch(GITHUB_RAW_URL + '?t=' + Date.now());  // cache bust
     if (res.ok) {
       const data = await res.json();
       cargarCotizaciones(data);
-      document.getElementById('buscador-input').placeholder = `🔍 ${data.length} cotizaciones (local)`;
+      document.getElementById('buscador-input').placeholder = `🔍 ${data.length} cotizaciones`;
     }
   } catch(e) {
-    // No hay archivo local, esperar carga manual
+    // Fallback: intentar local
+    try {
+      const res2 = await fetch('cotizaciones_data.json');
+      if (res2.ok) {
+        const data = await res2.json();
+        cargarCotizaciones(data);
+      }
+    } catch(e2) {}
   }
 }
 
