@@ -515,7 +515,7 @@ function saveHTMLWithLogo() {
 // Intento cargar automático desde archivo local al inicio
 async function cargarJSONLocal() {
   try {
-    const res = await fetch('cotizaciones.json');
+    const res = await fetch('cotizaciones_data.json');
     if (res.ok) {
       const data = await res.json();
       cargarCotizaciones(data);
