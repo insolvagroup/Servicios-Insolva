@@ -133,7 +133,8 @@ td.tot-i.disc-active{color:#e67e22!important;}
  <div class="sep"></div>
  <button class="btn-disc" id="disc-btn" onclick="toggleDisc()">🏷 Descuento: OFF</button>
  <div class="sep"></div>
- <button class="btn-imp" onclick="recargarSheet()" title="Recargar datos de la Sheet">🔄 Recargar</button>
+ <button class="btn-imp" onclick="document.getElementById('json-file-input').click()" title="Cargar JSON de cotizaciones">📂 Cargar datos</button>
+ <input type="file" id="json-file-input" accept=".json" style="display:none" onchange="cargarJSONDesdeInput(this)">
  <div class="sep"></div>
  <button class="btn-gallery" id="gallery-btn" onclick="toggleGalleryPage()">🖼 Hoja Infografía</button>
  <button class="btn-tyc" id="tyc-btn" onclick="toggleTyC()">📋 Términos y Cond.</button>
@@ -274,7 +275,11 @@ td.tot-i.disc-active{color:#e67e22!important;}
 // PASO 2: Archivo > Publicar en la web > CSV > "Hoja 1" > Publicar
 // PASO 3: Copiá el link y pegalo abajo
 // ═══════════════════════════════════════════════════════
-const SPREADSHEET_CSV_URL = ""; // <--- PEGA ACA EL LINK PUBLICADO
+// ═══════════════════════════════════════════════════════
+// MODO LOCAL — el JSON se carga manualmente
+// 1. Descargá cotizaciones.json desde GitHub
+// 2. Hacé clic en "📂 Cargar datos" y seleccioná el archivo
+// 3. O poné el archivo al lado del HTML y carga automático
 // ═══════════════════════════════════════════════════════
 
 let cotizaciones = [];
@@ -285,39 +290,29 @@ let discountPercent = 0;
 
 // ========== BUSCADOR INTELIGENTE ==========
 
-async function cargarCotizaciones() {
-  if (!SPREADSHEET_CSV_URL) {
-    document.getElementById('buscador-input').placeholder = '🔍 Configurá SPREADSHEET_CSV_URL';
-    return;
-  }
-  try {
-    const res = await fetch(SPREADSHEET_CSV_URL);
-    const csv = await res.text();
-    const lines = csv.split('\n').filter(l => l.trim());
-    cotizaciones = [];
-    // La primera línea es el header, la saltamos
-    for (let i = 1; i < lines.length; i++) {
-      const cols = lines[i].split(',');
-      if (cols.length >= 6) {
-        cotizaciones.push({
-          num: i,
-          cliente: (cols[1] || '').trim(),
-          nroPresupuesto: (cols[2] || '').trim(),
-          fecha: (cols[3] || '').trim(),
-          tipo: (cols[4] || '').trim(),
-          productos: (cols[5] || '').trim(),
-          total: (cols[6] || '').trim(),
-          anticipo: (cols[7] || '').trim(),
-          saldo: (cols[8] || '').trim(),
-          estado: (cols[9] || '').trim()
-        });
-      }
+function cargarCotizaciones(jsonData) {
+  cotizaciones = jsonData || [];
+  const count = cotizaciones.length;
+  document.getElementById('buscador-input').placeholder = count > 0
+    ? `🔍 Buscar entre ${count} cotizaciones...`
+    : '🔍 Cargá datos primero (📂 Cargar datos)';
+}
+
+function cargarJSONDesdeInput(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      cargarCotizaciones(data);
+      document.getElementById('buscador-input').placeholder = `🔍 ${data.length} cotizaciones cargadas`;
+    } catch(err) {
+      alert('Error al leer el JSON: ' + err.message);
     }
-    document.getElementById('buscador-input').placeholder = `🔍 ${cotizaciones.length} cotizaciones cargadas`;
-  } catch(e) {
-    document.getElementById('buscador-input').placeholder = '🔍 Error al cargar';
-    console.error('Error cargando CSV:', e);
-  }
+  };
+  reader.readAsText(file);
+  input.value = '';
 }
 
 function buscarCotizaciones() {
@@ -517,8 +512,18 @@ function saveHTMLWithLogo() {
   URL.revokeObjectURL(url);
 }
 
-function recargarSheet() {
-  cargarCotizaciones();
+// Intento cargar automático desde archivo local al inicio
+async function cargarJSONLocal() {
+  try {
+    const res = await fetch('cotizaciones.json');
+    if (res.ok) {
+      const data = await res.json();
+      cargarCotizaciones(data);
+      document.getElementById('buscador-input').placeholder = `🔍 ${data.length} cotizaciones (local)`;
+    }
+  } catch(e) {
+    // No hay archivo local, esperar carga manual
+  }
 }
 
 // Listen for content changes
@@ -526,7 +531,7 @@ document.addEventListener('input', function(e) {
   if(e.target.getAttribute('contenteditable') === 'true') updateTotals();
 });
 
-// Cargar datos al iniciar
-cargarCotizaciones();
+// Intentar cargar JSON local, si no está esperar carga manual
+cargarJSONLocal();
 </script>
 </body></html>
