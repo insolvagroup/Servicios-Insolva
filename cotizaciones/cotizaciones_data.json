@@ -214,5 +214,17 @@
     "anticipo": "180.6",
     "saldo": "390",
     "estado": "Pendiente"
+  },
+  {
+    "num": 19,
+    "cliente": "Ayelen",
+    "nroPresupuesto": "Q20260828A",
+    "fecha": "Fri Aug 28 2026 21:00:00 GMT-0300 (Argentina Standard Time)",
+    "tipo": "Camaras",
+    "productos": "2 cam EZVIZ H3c 128GB promo + instalacion electrica + materiales",
+    "total": "450000",
+    "anticipo": "355000",
+    "saldo": "95000",
+    "estado": "Pendiente"
   }
 ]
