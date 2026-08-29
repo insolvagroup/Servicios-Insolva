@@ -1,218 +1,405 @@
 [
   {
     "num": 1,
-    "cliente": "Ayelen & Joaquin (A&J)",
     "nroPresupuesto": "Q202602223C",
-    "fecha": "21/02/2026",
+    "cliente": "Ayelen & Joaquin (A&J)",
+    "fecha": "22/02/2026",
     "tipo": "Camaras",
-    "productos": "3 cam Hilook 4MP + NVR 4CH + HDD 2TB",
-    "total": "$1.143.000",
-    "anticipo": "528",
-    "saldo": "615",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "3 cam Hilook 4MP + NVR 4CH + HDD 2TB",
+        "cant": 1,
+        "unit": 1143000,
+        "subtotal": 1143000
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 615
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 528000,
+    "saldo": 615000,
+    "total": 1143000
   },
   {
     "num": 2,
-    "cliente": "Ayelen & Joaquin (A&J)",
     "nroPresupuesto": "Q202602224C",
-    "fecha": "21/02/2026",
+    "cliente": "Ayelen & Joaquin (A&J)",
+    "fecha": "22/02/2026",
     "tipo": "Camaras",
-    "productos": "4 cam Hilook 4MP + NVR 4CH + HDD 4TB",
-    "total": "$1.478.000",
-    "anticipo": "688",
-    "saldo": "790",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "4 cam Hilook 4MP + NVR 4CH + HDD 4TB",
+        "cant": 1,
+        "unit": 1478000,
+        "subtotal": 1478000
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 790
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 688000,
+    "saldo": 790000,
+    "total": 1478000
   },
   {
     "num": 3,
-    "cliente": "Javier Acu?a",
     "nroPresupuesto": "Q20260105",
-    "fecha": "26/04/2026",
+    "cliente": "Javier Acuña",
+    "fecha": "27/04/2026",
     "tipo": "Alarma",
-    "productos": "Kit AX Home Hikvision 16Z + sensor PIR + abertura + sirena",
-    "total": "478.99",
-    "anticipo": "382.99",
-    "saldo": "96",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "Kit AX Home Hikvision 16Z + sensor PIR + abertura + sirena",
+        "cant": 1,
+        "unit": 479,
+        "subtotal": 479
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 96000
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 382990,
+    "saldo": 96000,
+    "total": 478990
   },
   {
     "num": 4,
-    "cliente": "Javier Acu?a",
     "nroPresupuesto": "Q20260117",
-    "fecha": "10/07/2026",
+    "cliente": "Javier Acuña",
+    "fecha": "11/07/2026",
     "tipo": "Camara",
-    "productos": "1 cam Hilook 2MP POE con altavoz",
-    "total": "154",
-    "anticipo": "89",
-    "saldo": "65",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "1 cam Hilook 2MP POE con altavoz",
+        "cant": 1,
+        "unit": 154,
+        "subtotal": 154
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 65000
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 89000,
+    "saldo": 65000,
+    "total": 154000
   },
   {
     "num": 5,
-    "cliente": "Javier Acu?a",
     "nroPresupuesto": "Q20260116",
-    "fecha": "10/07/2026",
+    "cliente": "Javier Acuña",
+    "fecha": "11/07/2026",
     "tipo": "Camara",
-    "productos": "1 cam PTZ Hilook 4MP motorizado con zoom",
-    "total": "347",
-    "anticipo": "282",
-    "saldo": "65",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "1 cam PTZ Hilook 4MP motorizado con zoom",
+        "cant": 1,
+        "unit": 347,
+        "subtotal": 347
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 65000
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 282000,
+    "saldo": 65000,
+    "total": 347000
   },
   {
     "num": 6,
-    "cliente": "Fernando Galli",
     "nroPresupuesto": "Q20260107",
-    "fecha": "29/04/2026",
+    "cliente": "Fernando Galli",
+    "fecha": "30/04/2026",
     "tipo": "Camaras",
-    "productos": "2 cam Hilook 2MP + NVR 4CH + HDD 1TB",
-    "total": "766",
-    "anticipo": "401",
-    "saldo": "365",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "2 cam Hilook 2MP + NVR 4CH + HDD 1TB",
+        "cant": 1,
+        "unit": 766,
+        "subtotal": 766
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 365
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 401000,
+    "saldo": 365000,
+    "total": 766000
   },
   {
     "num": 7,
-    "cliente": "Oscar RG",
     "nroPresupuesto": "Q20260310PA01",
-    "fecha": "23/03/2026",
+    "cliente": "Oscar RG",
+    "fecha": "24/03/2026",
     "tipo": "Camaras",
-    "productos": "3 cam Hilook 4MP + NVR 4CH + HDD 2TB",
-    "total": "$1.096.900",
-    "anticipo": "566.9",
-    "saldo": "530",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "3 cam Hilook 4MP + NVR 4CH + HDD 2TB",
+        "cant": 1,
+        "unit": 1096900,
+        "subtotal": 1096900
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 530
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 566900,
+    "saldo": 530000,
+    "total": 1096900
   },
   {
     "num": 8,
-    "cliente": "Prismatica Arquitectura",
     "nroPresupuesto": "Q20260311PA03",
-    "fecha": "10/03/2026",
+    "cliente": "Prismatica Arquitectura",
+    "fecha": "11/03/2026",
     "tipo": "Camaras",
-    "productos": "4 cam mix (3 bullet + 1 turret) + NVR Hikvision Acusense + 4TB + switch PoE",
-    "total": "$1.791.500",
-    "anticipo": "$1.056.500",
-    "saldo": "735",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "4 cam mix (3 bullet + 1 turret) + NVR Hikvision Acusense + 4TB + switch PoE",
+        "cant": 1,
+        "unit": 1791500,
+        "subtotal": 1791500
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 735
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 1056500,
+    "saldo": 735000,
+    "total": 1791500
   },
   {
     "num": 9,
-    "cliente": "Eleonora De Maio",
     "nroPresupuesto": "Q20260311W",
-    "fecha": "10/03/2026",
+    "cliente": "Eleonora De Maio",
+    "fecha": "11/03/2026",
     "tipo": "Camaras",
-    "productos": "Kit 4 cam bullet WiFi 4MP + microSD 512GB",
-    "total": "508",
-    "anticipo": "268",
-    "saldo": "240",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "Kit 4 cam bullet WiFi 4MP + microSD 512GB",
+        "cant": 1,
+        "unit": 508,
+        "subtotal": 508
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 240
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 268000,
+    "saldo": 240000,
+    "total": 508000
   },
   {
     "num": 10,
-    "cliente": "Gustavo Pirog",
     "nroPresupuesto": "Q20260330",
-    "fecha": "29/03/2026",
+    "cliente": "Gustavo Pirog",
+    "fecha": "30/03/2026",
     "tipo": "Redes",
-    "productos": "2 AP Omada AX1800 + controlador + switch PoE",
-    "total": "$1.065.000",
-    "anticipo": "805",
-    "saldo": "260",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "2 AP Omada AX1800 + controlador + switch PoE",
+        "cant": 1,
+        "unit": 1065000,
+        "subtotal": 1065000
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 260
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 805000,
+    "saldo": 260000,
+    "total": 1065000
   },
   {
     "num": 11,
-    "cliente": "Keyuk Studios",
-    "nroPresupuesto": "-",
+    "nroPresupuesto": "Q20260714",
+    "cliente": "Diego (LAPATAIA 449)",
     "fecha": "2026",
     "tipo": "Camaras",
-    "productos": "3 cam EZVIZ Bullet WiFi 2K + 3 microSD 128GB",
-    "total": "805.515",
-    "anticipo": "490.515",
-    "saldo": "315",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "2 cam domo Hilook 2MP + NVR 4CH + HDD 1TB + 50m cable",
+        "cant": 1,
+        "unit": 749,
+        "subtotal": 749
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 200
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 549570,
+    "saldo": 199550,
+    "total": 749120
   },
   {
     "num": 12,
-    "cliente": "Ski Lodge",
-    "nroPresupuesto": "-",
+    "nroPresupuesto": "Q2026072301",
+    "cliente": "Urbanización Monte Susana",
     "fecha": "2026",
     "tipo": "Camaras",
-    "productos": "4 cam EZVIZ Bullet WiFi 2K + 4 microSD 128GB",
-    "total": "$1.074.020",
-    "anticipo": "654.02",
-    "saldo": "420",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "4 cam EZVIZ Bullet WiFi 2K + 4 microSD 128GB",
+        "cant": 1,
+        "unit": 1074020,
+        "subtotal": 1074020
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 420
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 654020,
+    "saldo": 420000,
+    "total": 1074020
   },
   {
     "num": 13,
-    "cliente": "Diego (LAPATAIA 449)",
-    "nroPresupuesto": "Q20260714",
-    "fecha": "2026",
-    "tipo": "Camaras",
-    "productos": "2 cam domo Hilook 2MP + NVR 4CH + HDD 1TB + 50m cable",
-    "total": "749.122",
-    "anticipo": "549.572",
-    "saldo": "199.55",
-    "estado": "Pendiente"
-  },
-  {
-    "num": 14,
-    "cliente": "Urbanizaci?n Monte Susana",
-    "nroPresupuesto": "Q2026072301",
-    "fecha": "2026",
-    "tipo": "Camaras",
-    "productos": "4 cam EZVIZ Bullet WiFi 2K + 4 microSD 128GB",
-    "total": "$1.074.020",
-    "anticipo": "654.02",
-    "saldo": "420",
-    "estado": "Pendiente"
-  },
-  {
-    "num": 15,
-    "cliente": "Site Ushuaia (corp)",
-    "nroPresupuesto": "Pendiente",
-    "fecha": "2026",
-    "tipo": "Integral",
-    "productos": "CCTV + alarma + posible perimetral. Relevamiento hecho, esperando definicion alcance.",
-    "total": "? estimado $2M+",
-    "anticipo": "?",
-    "saldo": "?",
-    "estado": "En revision"
-  },
-  {
-    "num": 16,
-    "cliente": "Daniel - Galpones",
-    "nroPresupuesto": "-",
-    "fecha": "2026",
-    "tipo": "Automatizacion",
-    "productos": "39 galpones: camaras + sensores + persiana motorizada + booking",
-    "total": "? estimado alto",
-    "anticipo": "?",
-    "saldo": "?",
-    "estado": "Esperando datos Gabo"
-  },
-  {
-    "num": 18,
-    "cliente": "Rodrigo (Morcat)",
-    "nroPresupuesto": "Q20260828M",
-    "fecha": "28/08/2026",
-    "tipo": "Camaras",
-    "productos": "2 cam EZVIZ H3c + instalacion completa (instalacion, tomas, cableado)",
-    "total": "$960.600",
-    "anticipo": "$570.600",
-    "saldo": "$390.000",
-    "estado": "Pendiente"
-  },
-  {
-    "num": 19,
-    "cliente": "Ayelen",
     "nroPresupuesto": "Q20260828A",
+    "cliente": "Ayelen",
     "fecha": "28/08/2026",
     "tipo": "Camaras",
-    "productos": "2 cam EZVIZ H3c 128GB",
-    "total": "$450.000",
-    "anticipo": "$355.000",
-    "saldo": "$95.000",
-    "estado": "Pendiente"
+    "estado": "Pendiente",
+    "productos": [
+      {
+        "nombre": "2 cam EZVIZ H3c 128GB promo + instalacion electrica + materiales",
+        "cant": 1,
+        "unit": 355000,
+        "subtotal": 355000
+      }
+    ],
+    "instalacion": [
+      {
+        "item": "Instalación y mano de obra",
+        "valor": 95000
+      }
+    ],
+    "tiempos": [
+      {
+        "etapa": "Instalación completa",
+        "horas": 4
+      }
+    ],
+    "anticipo": 355000,
+    "saldo": 95000,
+    "total": 450000
   }
 ]
