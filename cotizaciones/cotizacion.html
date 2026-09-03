@@ -131,6 +131,8 @@ td.tot-i.disc-active{color:#e67e22!important;}
  .resize-handle,.gallery-slot button{display:none!important;}
  .empty-row{display:none!important;}
  #logo-resize-handle,#logo-loaded button{display:none!important;}
+.btn-del{background:none;border:none;color:#e74c3c;cursor:pointer;font-size:16px;padding:4px 8px;border-radius:4px;transition:all .15s;line-height:1;}
+.btn-del:hover{background:#e74c3c22;transform:scale(1.15);}
 }
 </style>
 </head>
@@ -196,7 +198,7 @@ td.tot-i.disc-active{color:#e67e22!important;}
  </div>
  <div class="client-block">
  <div><label>Razón social</label><span id="cliente-razon" contenteditable="true">Nombre del cliente</span></div>
- <div><label>Teléfono</label><span id="cliente-tel" contenteditable="true">+54 9 2901 000000</span></div>
+ <div><label>Teléfono</label><span id="cliente-tel" contenteditable="true">+54 9 2901 641452</span></div>
  <div><label>Dirección</label><span id="cliente-dir" contenteditable="true">Dirección de instalación</span></div>
  <div><label>Localidad</label><span id="cliente-localidad" contenteditable="true">Ushuaia, Tierra del Fuego</span></div>
  </div>
@@ -208,7 +210,7 @@ td.tot-i.disc-active{color:#e67e22!important;}
  </div>
  <div class="tbl-wrap">
  <table id="prod-table">
- <thead><tr><th style="width:60px">Img</th><th>Código</th><th>Producto</th><th>Cant.</th><th class="r">Unitario</th><th class="r">Subtotal</th></tr></thead>
+ <thead><tr><th style="width:60px">Img</th><th>Código</th><th>Producto</th><th>Cant.</th><th class="r">Unitario</th><th class="r">Subtotal</th><th style="width:32px">✕</th></tr></thead>
  <tbody id="prod-body">
  <tr id="prod-row-template" style="display:none">
  <td class="img-cell"><div class="img-placeholder" onclick="document.getElementById('img-input-{ROW}').click()"><span>+</span><input type="file" id="img-input-{ROW}" accept="image/*" onchange="loadProdImg(this,{ROW})"></div></td>
@@ -217,6 +219,7 @@ td.tot-i.disc-active{color:#e67e22!important;}
  <td contenteditable="true">1</td>
  <td class="r" contenteditable="true">0</td>
  <td class="r total-cell" data-row="{ROW}">$0</td>
+ <td><button class="btn-del" onclick="delProdRow(this)">✕</button></td>
  </tr>
  <!-- fila editable default -->
  <tr>
@@ -226,6 +229,7 @@ td.tot-i.disc-active{color:#e67e22!important;}
  <td id="prod-cant-0" contenteditable="true">1</td>
  <td class="r" id="prod-unit-0" contenteditable="true">0</td>
  <td class="r total-cell" data-row="0">$0</td>
+ <td><button class="btn-del" onclick="delProdRow(this)">✕</button></td>
  </tr>
  </tbody>
  </table>
@@ -238,15 +242,17 @@ td.tot-i.disc-active{color:#e67e22!important;}
  </div>
  <div class="tbl-wrap">
  <table id="inst-table">
- <thead><tr><th>Ítem</th><th class="r">Valor</th></tr></thead>
+ <thead><tr><th>Ítem</th><th class="r">Valor</th><th style="width:32px">✕</th></tr></thead>
  <tbody id="inst-body">
  <tr id="inst-row-template" style="display:none">
  <td contenteditable="true">Descripción del servicio</td>
  <td class="r" contenteditable="true">0</td>
+ <td><button class="btn-del" onclick="delInstRow(this)">✕</button></td>
  </tr>
  <tr>
  <td id="inst-desc-0" contenteditable="true">Instalación</td>
  <td class="r" id="inst-valor-0" contenteditable="true">0</td>
+ <td><button class="btn-del" onclick="delInstRow(this)">✕</button></td>
  </tr>
  </tbody>
  </table>
@@ -305,7 +311,7 @@ td.tot-i.disc-active{color:#e67e22!important;}
  <div class="footer">
  <div class="footer-brand">INSOLVA SEGURIDAD</div>
  <div class="footer-contact">
- <span>+54 9 2901 000000 · info@insolva.com.ar</span>
+ <span>+54 9 2901 641452 · insolvagroup@gmail.com</span>
  </div>
  <div class="arrows">
  <span class="arr1"></span>
@@ -455,11 +461,20 @@ function addProdRow() {
   const row = prodCount;
   clone.querySelectorAll('[id*="{ROW}"]').forEach(el => { el.id = el.id.replace('{ROW}', row); el.onclick = function(){ document.getElementById('img-input-'+row).click(); }; });
   clone.querySelectorAll('input[type="file"]').forEach(el => { el.id = 'img-input-'+row; el.onchange = function(e){ loadProdImg(e.target, row); }; });
+  clone.querySelectorAll('[data-row="{ROW}"]').forEach(el => el.dataset.row = row);
   const tds = clone.querySelectorAll('td[contenteditable]');
   if(tds.length>=3) { tds[2].textContent = '1'; tds[3].textContent = '0'; }
   document.getElementById('prod-body').appendChild(clone);
   prodCount++;
   updateTotals();
+}
+
+function delProdRow(btn) {
+  const row = btn.closest('tr');
+  if(document.querySelectorAll('#prod-body tr:not([style*="display:none"]):not([id*="template"])').length <= 1) return;
+  row.remove();
+  updateTotals();
+  guardarEnLocalStorage();
 }
 
 function addInstRow() {
@@ -470,6 +485,14 @@ function addInstRow() {
   document.getElementById('inst-body').appendChild(clone);
   instCount++;
   updateTotals();
+}
+
+function delInstRow(btn) {
+  const row = btn.closest('tr');
+  if(document.querySelectorAll('#inst-body tr:not([style*="display:none"]):not([id*="template"])').length <= 1) return;
+  row.remove();
+  updateTotals();
+  guardarEnLocalStorage();
 }
 
 function updateTotals() {
@@ -635,7 +658,7 @@ function cargarDeLocalStorage() {
     document.getElementById('project-title').textContent = data.projectTitle || 'PROYECTO / INSTALACIÓN';
     document.getElementById('doc-date').textContent = data.docDate || 'FECHA: 26/08/2026';
     document.getElementById('cliente-razon').textContent = data.clienteRazon || 'Nombre del cliente';
-    document.getElementById('cliente-tel').textContent = data.clienteTel || '+54 9 2901 000000';
+    document.getElementById('cliente-tel').textContent = data.clienteTel || '+54 9 2901 641452';
     document.getElementById('cliente-dir').textContent = data.clienteDir || 'Dirección de instalación';
     document.getElementById('cliente-localidad').textContent = data.clienteLocalidad || 'Ushuaia, Tierra del Fuego';
     if(data.formasPago) document.getElementById('formas-pago').innerHTML = data.formasPago;
